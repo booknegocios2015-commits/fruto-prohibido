@@ -1321,47 +1321,67 @@ img {
         min-height: 300px;
     }
 /* ==========================================================================
-   REAJUSTE SEGURO DE PROPORCIONES (ESTRUCTURA ORIGINAL FRUTO PROHIBIDO)
+   ESTILO FINAL DEFINITIVO - FRUTO PROHIBIDO (FONDO CLARO ORIGINAL)
    ========================================================================== */
 
-.hero-section {
+.hero-premium-clear {
+    background-color: #fdf8f8; /* Tu color de fondo claro por defecto */
     padding: 80px 0;
-    background: #fdf8f8; /* Fondo sutil original */
+    overflow: hidden;
+    width: 100%;
 }
 
-/* Forzar que el contenedor nativo de tu plantilla actúe como grilla centrada */
-.hero-container {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
+/* Contenedor Flexbox estricto de 1200px para centrar todo el bloque en la pantalla */
+.premium-clear-container {
+    display: flex;
     align-items: center;
-    max-width: 1200px; /* Evita que el texto se vaya al extremo de la pantalla */
+    justify-content: space-between;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
+    gap: 40px;
 }
 
-/* Control del tamaño de los títulos (Formato original refinado) */
-.hero-content h1 {
+/* Bloque izquierdo del contenido */
+.premium-clear-content {
+    flex: 1.1;
+    max-width: 560px;
+}
+
+/* Tipografía elegante burdeos original con tamaño corregido y balanceado */
+.premium-clear-title {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.8rem;
+    font-weight: 700;
     line-height: 1.25;
-    color: #4a0e17;
-    margin-bottom: 20px;
+    color: #4a0e17; /* Tu burdeos oscuro de cabecera */
+    margin-bottom: 22px;
     text-align: left;
 }
 
-/* Ajuste del párrafo descriptivo */
-.hero-text-fixed {
+/* Cursiva elegante para el subtítulo */
+.premium-clear-italic {
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Color destacado para el cierre del título */
+.premium-clear-highlight {
+    color: #800a20; /* Tu burdeos de acento */
+}
+
+/* Párrafo descriptivo estilizado */
+.premium-clear-description {
     font-size: 1.05rem;
     color: #554346;
     line-height: 1.6;
     margin-bottom: 30px;
-    max-width: 520px;
     text-align: left;
+    max-width: 520px;
 }
 
-/* Estilo del badge de advertencia superior */
-.badge-premium-original {
+/* Pequeña etiqueta superior */
+.premium-clear-badge {
     display: inline-block;
     background: #ffffff;
     border: 1px solid rgba(128, 10, 32, 0.1);
@@ -1373,42 +1393,98 @@ img {
     margin-bottom: 20px;
 }
 
-/* Contenedor de la imagen a la derecha */
-.hero-image-container {
+/* Botones alineados de forma limpia */
+.premium-clear-actions {
     display: flex;
+    gap: 16px;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 480px;
-    margin: 0 auto;
 }
 
-/* Ajuste perfecto para que la nueva imagen con accesorios luzca espectacular */
-.hero-img-fixed {
+.btn-clear-ws {
+    background-color: #800a20; /* Botón WhatsApp original */
+    color: #ffffff !important;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(128, 10, 32, 0.15);
+}
+
+.btn-clear-ws:hover {
+    background-color: #610515;
+}
+
+.clear-ws-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-clear-catalog {
+    background-color: transparent;
+    color: #800a20 !important;
+    border: 1px solid #800a20;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-clear-catalog:hover {
+    background-color: #800a20;
+    color: #ffffff !important;
+}
+
+/* Bloque derecho para la nueva imagen */
+.premium-clear-visual {
+    flex: 0.9;
+    display: flex;
+    justify-content: center;
+    max-width: 460px;
+}
+
+/* Estilo para que la imagen mantenga proporciones y no rompa el layout */
+.clear-img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 24px; /* Bordes redondeados originales */
+    border-radius: 20px; /* Esquinas ligeramente suaves */
     display: block;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
-/* Diseño adaptable para teléfonos celulares */
+/* Comportamiento optimizado para móviles */
 @media (max-width: 991px) {
-    .hero-container {
-        grid-template-columns: 1fr;
+    .premium-clear-container {
+        flex-direction: column;
         text-align: center;
-        gap: 30px;
+        padding: 0 20px;
+        gap: 35px;
     }
-    .hero-content h1 {
+    .premium-clear-content {
+        max-width: 100%;
+    }
+    .premium-clear-title {
         font-size: 2rem;
         text-align: center;
     }
-    .hero-text-fixed {
+    .premium-clear-description {
         text-align: center;
         margin: 0 auto 25px auto;
     }
-    .badge-premium-original {
+    .premium-clear-badge {
         margin: 0 auto 15px auto;
+    }
+    .premium-clear-actions {
+        justify-content: center;
+    }
+    .premium-clear-visual {
+        max-width: 100%;
     }
 }
