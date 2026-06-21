@@ -1321,123 +1321,157 @@ img {
         min-height: 300px;
     }
 /* ==========================================================================
-   FRONTEND RECONSTRUCTION - HERO SECCIÓN (PROPORCIONES ORIGINALES)
+   ESTILOS PREMIUM INSPIRADOS EN PISCO LIMA (IMAGEN DE FONDO)
    ========================================================================== */
 
-/* Fondo limpio original de Fruto Prohibido */
-.hero-section {
-    background-color: #fdf8f8 !important;
-    padding: 80px 0 !important;
-    width: 100% !important;
-    display: block !important;
-}
-
-/* Grilla de dos columnas estricta (Evita el colapso horizontal de la Imagen 1) */
-.hero-container {
-    display: grid !important;
-    grid-template-columns: 1.1fr 0.9fr !important;
-    gap: 50px !important;
+.hero-premium-section {
+    position: relative !important;
+    /* REEMPLAZA AQUÍ CON LA RUTA CORRECTA DE TU IMAGEN DE FONDO */
+    background-image: url('assets/Gemini_Generated_Image_2afly32afly32afl.png') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    min-height: 85vh !important; /* Altura imponente para pantallas grandes */
+    display: flex !important;
     align-items: center !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 20px !important;
+    width: 100% !important;
+    overflow: hidden !important;
     box-sizing: border-box !important;
 }
 
-/* Alineación de la columna de contenido a la izquierda */
-.hero-content {
+/* Capa oscura superpuesta (Overlay) para dar contraste y que el texto se lea perfecto */
+.hero-premium-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, rgba(20, 3, 6, 0.9) 0%, rgba(20, 3, 6, 0.5) 100%) !important;
+    z-index: 1 !important;
+}
+
+/* Contenedor alineado a la izquierda */
+.hero-premium-container {
+    position: relative !important;
+    z-index: 2 !important; /* Queda por encima de la imagen y la capa oscura */
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 40px !important;
+    box-sizing: border-box !important;
+}
+
+/* Caja de contenido (Ancho controlado para que no ocupe toda la pantalla) */
+.hero-premium-content {
+    max-width: 650px !important;
     text-align: left !important;
 }
 
-/* Badge superior en tamaño y color exacto de la Imagen 2 */
-.badge-premium {
+/* Badge sutil con el tono dorado/beige de Pisco Lima */
+.badge-premium-lima {
     display: inline-block !important;
-    background: #ffffff !important;
-    border: 1px solid rgba(128, 10, 32, 0.1) !important;
-    color: #800a20 !important;
-    padding: 6px 14px !important;
+    background: rgba(212, 175, 55, 0.1) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    color: #d4af37 !important; /* Dorado elegante */
+    padding: 6px 16px !important;
     border-radius: 50px !important;
     font-size: 0.85rem !important;
-    font-weight: 500 !important;
-    margin-bottom: 24px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 25px !important;
 }
 
-/* Control tipográfico de alta gama (Playfair Display) */
-.hero-content h1 {
+/* Título Premium en Blanco con acento Dorado */
+.hero-premium-title {
     font-family: 'Playfair Display', Georgia, serif !important;
-    font-size: 2.8rem !important; /* Mismo tamaño balanceado de la Imagen 2 */
-    font-weight: 700 !important;
+    font-size: 3.2rem !important;
+    font-weight: 400 !important;
     line-height: 1.25 !important;
-    color: #4a0e17 !important; /* Tu color vino original */
-    margin: 0 0 20px 0 !important;
-    text-align: left !important;
+    color: #ffffff !important; /* Blanco puro para contraste extremo */
+    margin: 0 0 25px 0 !important;
 }
 
-/* Párrafo descriptivo ajustado según proporciones de la página */
-.hero-description {
-    font-size: 1.05rem !important;
-    color: #554346 !important;
-    line-height: 1.6 !important;
-    margin: 0 0 35px 0 !important;
-    max-width: 520px !important;
-    text-align: left !important;
+.hero-italic {
+    font-style: italic !important;
 }
 
-/* Grupo de botones alineados horizontalmente */
-.hero-actions {
+/* El toque de color oro de alta gastronomía aplicado al Sex Shop */
+.hero-gold {
+    color: #d4af37 !important; 
+    font-weight: 600 !important;
+}
+
+/* Descripción con tipografía limpia y legible sobre fondo oscuro */
+.hero-premium-description {
+    font-size: 1.1rem !important;
+    color: #e0d5d7 !important; /* Blanco suave roto */
+    line-height: 1.7 !important;
+    margin: 0 0 40px 0 !important;
+    font-weight: 300 !important;
+}
+
+/* Botones Premium */
+.hero-premium-actions {
     display: flex !important;
-    gap: 16px !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
+    gap: 20px !important;
 }
 
-/* Contenedor de la derecha para resguardar la imagen */
-.hero-image-container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 480px !important;
-    margin: 0 auto !important;
+/* Botón principal color vino de la marca */
+.btn-premium-ws {
+    background-color: #800a20 !important;
+    color: #ffffff !important;
+    padding: 14px 32px !important;
+    border-radius: 4px !important; /* Estilo de botón más recto y elegante como Pisco Lima */
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: background 0.3s ease !important;
+    display: inline-block !important;
 }
 
-/* Imagen fluida con esquinas redondeadas idénticas a la Imagen 2 */
-.hero-img {
-    width: 100% !important;
-    height: auto !important;
-    object-fit: cover !important;
-    border-radius: 24px !important; /* El toque curvo premium de la Imagen 2 */
-    display: block !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+.btn-premium-ws:hover {
+    background-color: #a3142e !important;
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN (ADAPTACIÓN COMPLETA PARA MÓVILES)
-   ========================================================================== */
-@media (max-width: 991px) {
-    .hero-container {
-        grid-template-columns: 1fr !important;
+/* Botón secundario Transparente con borde dorado */
+.btn-premium-catalog {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid #d4af37 !important;
+    padding: 14px 32px !important;
+    border-radius: 4px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+}
+
+.btn-premium-catalog:hover {
+    background-color: #d4af37 !important;
+    color: #140306 !important;
+}
+
+/* Optimización para celulares */
+@media (max-width: 767px) {
+    .hero-premium-section {
+        min-height: 70vh !important;
+    }
+    .hero-premium-overlay {
+        background: rgba(20, 3, 6, 0.85) !important; /* Más oscuro en móvil para asegurar lectura */
+    }
+    .hero-premium-container {
+        padding: 0 20px !important;
+    }
+    .hero-premium-title {
+        font-size: 2.2rem !important;
+    }
+    .hero-premium-actions {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    .btn-premium-ws, .btn-premium-catalog {
         text-align: center !important;
-        gap: 40px !important;
-    }
-    .hero-content {
-        text-align: center !important;
-    }
-    .hero-content h1 {
-        font-size: 2.1rem !important;
-        text-align: center !important;
-    }
-    .hero-description {
-        text-align: center !important;
-        margin: 0 auto 25px auto !important;
-    }
-    .badge-premium {
-        margin: 0 auto 15px auto !important;
-    }
-    .hero-actions {
-        justify-content: center !important;
-    }
-    .hero-image-container {
-        max-width: 100% !important;
+        width: 100% !important;
     }
 }
