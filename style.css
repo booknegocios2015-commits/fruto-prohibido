@@ -357,49 +357,83 @@ img {
    HERO SECTION — dark editorial treatment (Pisco Lima-inspired, FP palette)
    ========================================================================== */
 .hero-section {
-    padding: 150px 0 100px 0;
-    background: linear-gradient(160deg, var(--color-hero-bg-1) 0%, var(--color-hero-bg-2) 65%);
     position: relative;
     overflow: hidden;
+    padding: 150px 0 100px 0;
+    min-height: 760px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(160deg, var(--color-hero-bg-1) 0%, var(--color-hero-bg-2) 65%);
 }
 
-/* Ambient crimson/gold glow sitting behind the product photo */
+/* Ambient crimson glow sitting behind the copy, for warmth */
 .hero-section::before {
     content: '';
     position: absolute;
-    top: -15%;
-    right: -10%;
-    width: 620px;
-    height: 620px;
+    top: -25%;
+    left: -10%;
+    width: 560px;
+    height: 560px;
     border-radius: var(--border-radius-full);
-    background: radial-gradient(circle, rgba(128, 10, 32, 0.35) 0%, rgba(128, 10, 32, 0) 70%);
+    background: radial-gradient(circle, rgba(128, 10, 32, 0.3) 0%, rgba(128, 10, 32, 0) 70%);
     z-index: 1;
 }
 
-/* Faint gold haze, lower-left, for depth */
-.hero-section::after {
-    content: '';
+/* Full-bleed product photo — sits behind everything, anchored to the right edge */
+.hero-visual {
     position: absolute;
-    bottom: -20%;
-    left: -10%;
-    width: 480px;
-    height: 480px;
-    border-radius: var(--border-radius-full);
-    background: radial-gradient(circle, rgba(197, 168, 128, 0.12) 0%, rgba(197, 168, 128, 0) 70%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60%;
     z-index: 1;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 62% 50%;
+    transform: scale(1.03);
+    transition: transform 8s ease;
+}
+
+.hero-section:hover .hero-image {
+    transform: scale(1.08);
+}
+
+/* Dissolves the photo into the background toward the center, so it reads as
+   atmosphere behind the copy rather than a boxed image — marked on the right,
+   transparent toward the middle. */
+.hero-visual-fade {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg,
+            var(--color-hero-bg-2) 0%,
+            rgba(11, 3, 4, 0.96) 16%,
+            rgba(11, 3, 4, 0.78) 30%,
+            rgba(11, 3, 4, 0.38) 46%,
+            rgba(11, 3, 4, 0.1) 62%,
+            rgba(11, 3, 4, 0) 78%
+        ),
+        linear-gradient(180deg,
+            rgba(11, 3, 4, 0.45) 0%,
+            rgba(11, 3, 4, 0) 22%,
+            rgba(11, 3, 4, 0) 80%,
+            rgba(11, 3, 4, 0.55) 100%
+        );
+    pointer-events: none;
 }
 
 .hero-grid {
     position: relative;
     z-index: 2;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 56px;
-    align-items: center;
 }
 
 .hero-content {
-    max-width: 620px;
+    max-width: 580px;
 }
 
 .badge {
@@ -467,7 +501,7 @@ img {
     font-size: 1.05rem;
     color: var(--color-hero-text-muted);
     margin-bottom: 34px;
-    max-width: 560px;
+    max-width: 520px;
     line-height: 1.6;
 }
 
@@ -475,80 +509,6 @@ img {
     display: flex;
     gap: 16px;
     align-items: center;
-}
-
-.hero-visual {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-/* Offset hairline frame sitting behind the photo — gallery-placard cue */
-.hero-visual::before {
-    content: '';
-    position: absolute;
-    top: 18px;
-    left: 18px;
-    right: -18px;
-    bottom: -18px;
-    border: 1px solid var(--color-hero-frame);
-    border-radius: var(--border-radius-lg);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.image-wrapper {
-    position: relative;
-    z-index: 2;
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-    background-color: var(--color-hero-bg-2);
-    border: 1px solid var(--color-hero-frame);
-    width: 100%;
-    max-width: 480px;
-}
-
-.hero-image {
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 1 / 1;
-    transform: scale(1.02);
-    transition: transform 6s ease;
-}
-
-.image-wrapper:hover .hero-image {
-    transform: scale(1.08);
-}
-
-.image-shadow-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:
-        radial-gradient(ellipse at center, rgba(11, 3, 4, 0) 50%, rgba(11, 3, 4, 0.5) 100%),
-        linear-gradient(to top, rgba(11, 3, 4, 0.35) 0%, rgba(11, 3, 4, 0) 35%);
-    pointer-events: none;
-}
-
-/* Rotated gallery-style caption running along the image edge — signature detail */
-.hero-visual-tag {
-    position: absolute;
-    left: -16px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-90deg);
-    transform-origin: left center;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--color-brand-gold);
-    white-space: nowrap;
-    z-index: 3;
 }
 
 /* ==========================================================================
@@ -1319,6 +1279,9 @@ img {
     .grid-3 {
         grid-template-columns: repeat(2, 1fr);
     }
+    .hero-visual {
+        width: 68%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1338,12 +1301,27 @@ img {
         gap: 40px;
     }
     .hero-section {
+        display: block;
+        min-height: auto;
         padding: 110px 0 50px 0;
     }
+    .hero-visual {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        height: 280px;
+        border-radius: var(--border-radius-lg);
+        margin-bottom: 28px;
+    }
+    .hero-visual-fade {
+        background:
+            linear-gradient(180deg, rgba(11, 3, 4, 0.15) 0%, rgba(11, 3, 4, 0) 30%, rgba(11, 3, 4, 0.75) 100%),
+            linear-gradient(90deg, rgba(11, 3, 4, 0.35) 0%, rgba(11, 3, 4, 0) 25%, rgba(11, 3, 4, 0) 75%, rgba(11, 3, 4, 0.35) 100%);
+    }
     .hero-grid {
-        display: flex;
-        flex-direction: column-reverse;
-        gap: 32px;
+        display: block;
     }
     .hero-content {
         text-align: center;
@@ -1383,20 +1361,6 @@ img {
     .hero-actions .btn {
         width: 100%;
         max-width: 320px;
-    }
-    .hero-visual {
-        max-width: 320px;
-        margin: 0 auto;
-        width: 100%;
-    }
-    .hero-visual::before {
-        top: 12px;
-        left: 12px;
-        right: -12px;
-        bottom: -12px;
-    }
-    .hero-visual-tag {
-        display: none;
     }
     .cta-actions {
         flex-direction: column;
