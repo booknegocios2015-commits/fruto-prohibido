@@ -1320,38 +1320,37 @@ img {
     .map-container {
         min-height: 300px;
     }
-/* ==========================================
-   ESTILOS COMPACTOS Y SEGUROS (HERO FIJO)
-   ========================================== */
+/* ==========================================================================
+   FRONTEND RECONSTRUCTION - HERO SECCIÓN (PROPORCIONES ORIGINALES)
+   ========================================================================== */
 
-.hero-fijo-final {
+/* Fondo limpio original de Fruto Prohibido */
+.hero-section {
     background-color: #fdf8f8 !important;
-    padding: 60px 0 !important;
+    padding: 80px 0 !important;
     width: 100% !important;
-    box-sizing: border-box !important;
+    display: block !important;
 }
 
-/* Contenedor que centra el contenido alineado al logo de arriba */
-.hero-fijo-wrapper {
-    display: flex !important;
-    flex-direction: row !important;
+/* Grilla de dos columnas estricta (Evita el colapso horizontal de la Imagen 1) */
+.hero-container {
+    display: grid !important;
+    grid-template-columns: 1.1fr 0.9fr !important;
+    gap: 50px !important;
     align-items: center !important;
-    justify-content: space-between !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
     padding: 0 20px !important;
-    gap: 50px !important;
     box-sizing: border-box !important;
 }
 
-/* Control estricto de la columna de texto */
-.hero-fijo-txt {
-    flex: 1.1 !important;
-    max-width: 550px !important;
+/* Alineación de la columna de contenido a la izquierda */
+.hero-content {
     text-align: left !important;
 }
 
-.hero-fijo-badge {
+/* Badge superior en tamaño y color exacto de la Imagen 2 */
+.badge-premium {
     display: inline-block !important;
     background: #ffffff !important;
     border: 1px solid rgba(128, 10, 32, 0.1) !important;
@@ -1360,100 +1359,85 @@ img {
     border-radius: 50px !important;
     font-size: 0.85rem !important;
     font-weight: 500 !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 24px !important;
 }
 
-/* Ajuste del título para que no sea gigante */
-.hero-fijo-txt h1 {
+/* Control tipográfico de alta gama (Playfair Display) */
+.hero-content h1 {
     font-family: 'Playfair Display', Georgia, serif !important;
-    font-size: 2.5rem !important;
-    line-height: 1.3 !important;
-    color: #4a0e17 !important;
+    font-size: 2.8rem !important; /* Mismo tamaño balanceado de la Imagen 2 */
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: #4a0e17 !important; /* Tu color vino original */
     margin: 0 0 20px 0 !important;
+    text-align: left !important;
 }
 
-.txt-italica {
-    font-style: italic !important;
-    font-weight: 400 !important;
-}
-
-.txt-color {
-    color: #800a20 !important;
-}
-
-/* Párrafo descriptivo ajustado */
-.hero-fijo-txt p {
-    font-family: inherit !important;
-    font-size: 1rem !important;
+/* Párrafo descriptivo ajustado según proporciones de la página */
+.hero-description {
+    font-size: 1.05rem !important;
     color: #554346 !important;
     line-height: 1.6 !important;
-    margin: 0 0 30px 0 !important;
+    margin: 0 0 35px 0 !important;
+    max-width: 520px !important;
+    text-align: left !important;
 }
 
-/* Botones alineados a la izquierda de forma limpia */
-.hero-fijo-btns {
+/* Grupo de botones alineados horizontalmente */
+.hero-actions {
     display: flex !important;
-    gap: 15px !important;
+    gap: 16px !important;
     justify-content: flex-start !important;
+    align-items: center !important;
 }
 
-.btn-ws-fijo {
-    background-color: #800a20 !important;
-    color: #ffffff !important;
-    padding: 14px 28px !important;
-    border-radius: 30px !important;
-    font-size: 0.95rem !important;
-    font-weight: 600 !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-}
-
-.btn-cat-fijo {
-    background-color: transparent !important;
-    color: #800a20 !important;
-    border: 1px solid #800a20 !important;
-    padding: 14px 28px !important;
-    border-radius: 30px !important;
-    font-size: 0.95rem !important;
-    font-weight: 600 !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-}
-
-/* Columna de la imagen ajustada a la derecha */
-.hero-fijo-img {
-    flex: 0.9 !important;
-    max-width: 450px !important;
+/* Contenedor de la derecha para resguardar la imagen */
+.hero-image-container {
     display: flex !important;
     justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
 }
 
-.hero-fijo-img img {
+/* Imagen fluida con esquinas redondeadas idénticas a la Imagen 2 */
+.hero-img {
     width: 100% !important;
     height: auto !important;
     object-fit: cover !important;
-    border-radius: 20px !important;
+    border-radius: 24px !important; /* El toque curvo premium de la Imagen 2 */
     display: block !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
 }
 
-/* Responsivo para celulares */
+/* ==========================================================================
+   RESPONSIVE DESIGN (ADAPTACIÓN COMPLETA PARA MÓVILES)
+   ========================================================================== */
 @media (max-width: 991px) {
-    .hero-fijo-wrapper {
-        flex-direction: column !important;
+    .hero-container {
+        grid-template-columns: 1fr !important;
         text-align: center !important;
-        gap: 35px !important;
+        gap: 40px !important;
     }
-    .hero-fijo-txt {
-        max-width: 100% !important;
+    .hero-content {
         text-align: center !important;
     }
-    .hero-fijo-txt h1 {
-        font-size: 2rem !important;
+    .hero-content h1 {
+        font-size: 2.1rem !important;
+        text-align: center !important;
     }
-    .hero-fijo-btns {
+    .hero-description {
+        text-align: center !important;
+        margin: 0 auto 25px auto !important;
+    }
+    .badge-premium {
+        margin: 0 auto 15px auto !important;
+    }
+    .hero-actions {
         justify-content: center !important;
     }
-    .hero-fijo-img {
+    .hero-image-container {
         max-width: 100% !important;
     }
 }
